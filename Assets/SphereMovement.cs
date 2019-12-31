@@ -38,6 +38,14 @@ public class SphereMovement : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
+        else if(col.gameObject.tag == "accelerator")
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0, 200f));
+        }
+        else if (col.gameObject.tag == "decelerator")
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 400f, -200f));
+        }
     }
 
     // Update is called once per frame
